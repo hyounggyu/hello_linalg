@@ -63,8 +63,10 @@ fn print_mat(mat: &Matrix) {
 fn main() {
     let mut a: Matrix = Matrix::new(3, 3);
     let data = vec![2, -1, 0, -1, 2, -1, 0, -1, 2];
+
     println!("Matrix a:");
     print_mat(&a);
+
     for i in 0..a.rows {
         for j in 0..a.cols {
             a.set(i, j, data[i * a.cols + j] as f64);
@@ -72,9 +74,12 @@ fn main() {
     }
     println!("Matrix a:");
     print_mat(&a);
+
     let (l, u) = lu_dcp(&a);
+
     println!("Matrix l:");
     print_mat(&l);
+
     println!("Matrix u:");
     print_mat(&u);
 }
