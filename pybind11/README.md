@@ -1,4 +1,4 @@
-# hello_pybind11
+# Simple Linear Algebra Examples in PyBind11
 
 Simple example to interoperate Python and C++ using PyBind11.
 
