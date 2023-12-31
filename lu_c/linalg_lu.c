@@ -16,6 +16,11 @@
  * matrix, but in an integer vector P of size N+1 containing column indexes
  * where the permutation matrix has "1". The last element P[N]=S+N, where S is
  * the number of row exchanges needed for determinant computation, det(P)=(-1)^S
+ *
+ * NOTE by me (not in the original code):
+ * The original code returns 0 when the matrix is near degenerate, but
+ * here we return 1 to indicate failure.
+ *
  */
 int LUPDecompose(double **A, int N, double Tol, int *P) {
 
@@ -36,7 +41,7 @@ int LUPDecompose(double **A, int N, double Tol, int *P) {
       }
 
     if (maxA < Tol)
-      return 0; // failure, matrix is degenerate
+      return 1; // failure, matrix is near degenerate
 
     if (imax != i) {
       // pivoting P
@@ -61,7 +66,7 @@ int LUPDecompose(double **A, int N, double Tol, int *P) {
     }
   }
 
-  return 1; // decomposition done
+  return 0; // decomposition done
 }
 
 /*
