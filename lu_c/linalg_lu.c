@@ -2,7 +2,7 @@
  * Source: https://en.wikipedia.org/wiki/LU_decomposition#C_code_example
  *
 */
-#include "math.h"
+#include <math.h>
 #include "linalg_lu.h"
 
 /* INPUT: A - array of pointers to rows of a square matrix having dimension N
